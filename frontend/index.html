@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookNFeast — Hotel & Restaurant Management System</title>
+  <meta name="description" content="A full-featured hotel and restaurant database management system for managing rooms, bookings, menu, orders, staff, and reports." />
+  <link rel="icon" href="../assets/booknfeast-logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark">
+        <img class="brand-logo" src="../assets/booknfeast-logo.svg" alt="BookNFeast logo" />
+      </div>
+      <div class="brand-text">
+        <span class="brand-name">BookNFeast</span>
+        <span class="brand-tagline">Management System</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-group">
+        <span class="nav-group-label">Overview</span>
+        <a href="#" class="nav-link active" data-page="home" id="nav-home">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+        </a>
+        <a href="#" class="nav-link" data-page="dashboard" id="nav-dashboard">
+          <span class="nav-icon">📊</span>
+          <span class="nav-text">Dashboard</span>
+        </a>
+      </div>
+
+      <div class="nav-group">
+        <span class="nav-group-label">Hotel</span>
+        <a href="#" class="nav-link" data-page="rooms" id="nav-rooms">
+          <span class="nav-icon">🛏️</span>
+          <span class="nav-text">Rooms</span>
+        </a>
+        <a href="#" class="nav-link" data-page="guests" id="nav-guests">
+          <span class="nav-icon">👤</span>
+          <span class="nav-text">Guests</span>
+        </a>
+        <a href="#" class="nav-link" data-page="bookings" id="nav-bookings">
+          <span class="nav-icon">📅</span>
+          <span class="nav-text">Bookings</span>
+        </a>
+      </div>
+
+      <div class="nav-group">
+        <span class="nav-group-label">Restaurant</span>
+        <a href="#" class="nav-link" data-page="menu" id="nav-menu">
+          <span class="nav-icon">🍽️</span>
+          <span class="nav-text">Menu</span>
+        </a>
+        <a href="#" class="nav-link" data-page="tables" id="nav-tables">
+          <span class="nav-icon">🪑</span>
+          <span class="nav-text">Tables</span>
+        </a>
+        <a href="#" class="nav-link" data-page="orders" id="nav-orders">
+          <span class="nav-icon">🧾</span>
+          <span class="nav-text">Orders</span>
+        </a>
+      </div>
+
+      <div class="nav-group">
+        <span class="nav-group-label">Management</span>
+        <a href="#" class="nav-link" data-page="staff" id="nav-staff">
+          <span class="nav-icon">👥</span>
+          <span class="nav-text">Staff</span>
+        </a>
+        <a href="#" class="nav-link" data-page="reports" id="nav-reports">
+          <span class="nav-icon">📈</span>
+          <span class="nav-text">Reports</span>
+        </a>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="user-avatar">A</div>
+        <div class="user-info">
+          <span class="user-name">Admin</span>
+          <span class="user-role">Super Admin</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content" id="main-content">
+
+    <!-- Top Bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Sidebar">☰</button>
+        <h1 class="page-title" id="page-title">Dashboard</h1>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-search">
+          <span class="topbar-search-icon">⌕</span>
+          <input id="global-search" type="search" placeholder="Search rooms, guests, orders..." aria-label="Search records" />
+          <kbd>Ctrl K</kbd>
+        </div>
+        <button class="btn btn-secondary btn-sm" id="command-btn">Command Center</button>
+        <div class="topbar-time" id="topbar-time"></div>
+        <button class="btn btn-primary btn-sm" id="topbar-action">+ Add New</button>
+      </div>
+    </header>
+
+    <!-- Page Content Area -->
+    <div class="page-content" id="page-content">
+      <!-- Rendered by JS -->
+    </div>
+
+  </main>
+
+  <!-- Global Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title">Modal</h2>
+        <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-footer" id="modal-footer"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/db.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/hotel.js"></script>
+  <script src="js/restaurant.js"></script>
+  <script src="js/staff.js"></script>
+  <script src="js/reports.js"></script>
+</body>
+</html>
